@@ -30,4 +30,16 @@
 
     int choice;
     cin >> choice;
+    while (choice < 1 || choice > 4) {
+        cout << "1 to 4 only please: ";
+        cin >> choice;
+    }
+
+    int idx = choice - 1;
+    int months = terms[idx];
+    double rate = rates[idx];
+
+    double interest = amount * rate / 100;
+    double total = amount + interest;
+    double monthly = total / months;
 
