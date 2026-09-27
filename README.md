@@ -43,3 +43,21 @@
     double total = amount + interest;
     double monthly = total / months;
 
+cout << fixed << setprecision(2);
+    cout << "\n----------------------------\n";
+    cout << "Amount:        RM " << amount << "\n";
+    cout << "Term:          " << months << " months\n";
+    cout << "Interest rate: " << rate << "%\n";
+    cout << "Interest paid: RM " << interest << "\n";
+    cout << "Total to pay:  RM " << total << "\n";
+    cout << "Per month:     RM " << monthly << "\n";
+    cout << "----------------------------\n";
+
+   cout << "\nMonth by month:\n";
+    double remaining = total;
+    for (int m = 1; m <= months; m++) {
+        remaining -= monthly;
+        if (m == months) remaining = 0;
+        cout << "  Month " << m << ": pay RM " << monthly
+             << "   (balance RM " << remaining << ")\n";
+    }
