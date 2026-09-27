@@ -61,3 +61,6 @@
         cout << "  Month " << m << ": pay RM " << monthly
              << "   (balance RM " << remaining << ")\n";
     }
+    cout << "\ndone.\n";
+    return 0;
+    }
