@@ -1,4 +1,4 @@
-# Buy-Now-Pay-Later
+    # Buy-Now-Pay-Later
     #include <iostream>
     #include <iomanip>
     #include <vector>
@@ -13,15 +13,15 @@
     cout << "=== BNPL Calculator ===\n\n";
 
     double amount;
-    cout << "Purchase amount: RM ";
+    cout << "Purchase amount: RM ";    //prompt user purchase amount 
     cin >> amount;
 
     if (amount <= 0) {
-    cout << "that's not a real amount, try again later\n";
+    cout << "that's not a real amount, try again later\n";    //ensure that the amount can be calculated
     return 1;
     }
 
-    cout << "\nPick a plan:\n";
+    cout << "\nPick a plan:\n";    //show our services
     cout << "1) 3 months, no interest\n";
     cout << "2) 6 months, 1.5% interest\n";
     cout << "3) 9 months, 2% interest\n";
@@ -31,7 +31,7 @@
     int choice;
     cin >> choice;
     while (choice < 1 || choice > 4) {
-        cout << "1 to 4 only please: ";
+        cout << "1 to 4 only please: ";    //prompt user to choose a plan
         cin >> choice;
     }
 
@@ -39,12 +39,12 @@
     int months = terms[idx];
     double rate = rates[idx];
 
-    double interest = amount * rate / 100;
-    double total = amount + interest;
-    double monthly = total / months;
+    double interest = amount * rate / 100;    //calculate the interest 
+    double total = amount + interest;        //total amount including interest
+    double monthly = total / months;        //monthly pay
 
     cout << fixed << setprecision(2);
-    cout << "\n----------------------------\n";
+    cout << "\n----------------------------\n";    //display payment details
     cout << "Amount:        RM " << amount << "\n";
     cout << "Term:          " << months << " months\n";
     cout << "Interest rate: " << rate << "%\n";
@@ -53,7 +53,7 @@
     cout << "Per month:     RM " << monthly << "\n";
     cout << "----------------------------\n";
 
-    cout << "\nMonth by month:\n";
+    cout << "\nMonth by month:\n";        //list down all the payment per month
     double remaining = total;
     for (int m = 1; m <= months; m++) {
         remaining -= monthly;
@@ -61,6 +61,6 @@
         cout << "  Month " << m << ": pay RM " << monthly
              << "   (balance RM " << remaining << ")\n";
     }
-    cout << "\ndone.\n";
+    cout << "\nThank you for using our service.\n";    //end
     return 0;
     }
